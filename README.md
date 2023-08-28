@@ -5,8 +5,8 @@
 Чтобы запустить, необходимо установить requirements.txt, набрать в терминале 
 
 ```shell
- git clone https://github.com/ValeriyMenshikov/dm_api_tests
- cd dm_api_tests
+ git https://github.com/ValeriyMenshikov/simple_api_test_codegen
+ cd simple_api_test_codegen
  pip install -r requirements.txt
 ```
 
