@@ -1,0 +1,4 @@
+requests
+curlparser
+pytest
+inflection
