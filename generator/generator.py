@@ -40,7 +40,7 @@ def to_parse(curl):
 
 def write_test_code(parsed_command, code):
     base_path = pathlib.Path(__file__)
-    tests_folder = base_path.parent.joinpath('tests')
+    tests_folder = base_path.parent.joinpath('../tests')
     tests_folder.mkdir(parents=True, exist_ok=True)
     tests_folder.joinpath('__init__.py').touch(exist_ok=True)
     test_file = f'test_{parsed_command.method}_{parsed_command.endpoint}.py'
@@ -63,7 +63,7 @@ def client():
     return {service_name}(host=host, headers=headers)
     """
 
-    base_path = pathlib.Path(__file__).parent.joinpath('tests')
+    base_path = pathlib.Path(__file__).parent.joinpath('../tests')
     base_path.mkdir(parents=True, exist_ok=True)
     conftest_file = base_path.joinpath('conftest.py')
     if not conftest_file.is_file():
@@ -86,7 +86,7 @@ class {inflection.camelize(parsed_command.service_name)}:
     """
 
     base_path = pathlib.Path(__file__)
-    client_path = base_path.parent.joinpath('client')
+    client_path = base_path.parent.joinpath('../client')
     client_path.mkdir(parents=True, exist_ok=True)
     client_path.joinpath('__init__.py').touch(exist_ok=True)
     client = client_path.joinpath(f'{parsed_command.service_name}.py')
@@ -105,7 +105,7 @@ def generate_method_code(parsed_command):
         
 """
     base_path = pathlib.Path(__file__)
-    client_path = base_path.parent.joinpath('client')
+    client_path = base_path.parent.joinpath('../client')
     client_path.mkdir(parents=True, exist_ok=True)
     client_path.joinpath('__init__.py').touch(exist_ok=True)
     client = client_path.joinpath(f'{parsed_command.service_name}.py')
@@ -130,7 +130,7 @@ def test_{method}_{endpoint}(client):
 """
 
     base_path = pathlib.Path(__file__)
-    tests_folder = base_path.parent.joinpath('tests')
+    tests_folder = base_path.parent.joinpath('../tests')
     tests_folder.mkdir(parents=True, exist_ok=True)
     tests_folder.joinpath('__init__.py').touch(exist_ok=True)
     test_file = tests_folder.joinpath(f'test_{parsed_command.method}_{parsed_command.endpoint}.py')
